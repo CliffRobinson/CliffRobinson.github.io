@@ -1,0 +1,38 @@
+* {
+    padding:1px;
+    margin: 0px;
+}
+
+
+.container {
+    outline: solid red 1px;
+    
+}
+.row {
+    outline: solid green 1px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.column,
+  .columns {
+      outline: solid blue 1px;
+  }
+
+  p {
+      text-align: justify;
+      outline: solid salmon 1px;
+  }
+
+  img {
+      outline: solid salmon 1px;
+  }
+
+  footer{
+      display: flex;
+      outline: solid magenta 1px;
+  }
+
+  .foot{
+      outline: solid brown 1px;
+  }
