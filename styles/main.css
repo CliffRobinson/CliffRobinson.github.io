@@ -1,6 +1,6 @@
 * {
-    padding:1px;
-    margin: 0px;
+    padding:2px;
+    margin: 2px;
 }
 
 
@@ -9,8 +9,9 @@
     
 }
 .row {
+    position: relative;
     outline: solid green 1px;
-    margin-top: 45px;
+    margin-top: 0px;
     margin-bottom: 45px;
 }
 
@@ -21,7 +22,7 @@
 
   p {
       text-align: justify;
-      outline: solid salmon 1px;
+      outline: solid lime 1px;
   }
 
   img {
@@ -36,3 +37,16 @@
   .foot{
       outline: solid brown 1px;
   }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.button {
+    color: white;
+    background-color: grey;
+}
