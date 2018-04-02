@@ -1,6 +1,6 @@
 * {
-    padding:2px;
-    margin: 2px;
+    padding:0px;
+    margin: 0px;
 }
 
 
@@ -49,4 +49,5 @@
 .button {
     color: white;
     background-color: grey;
+    width: 100%;
 }
