@@ -1,11 +1,18 @@
+
+
 * {
     padding:0px;
     margin: 0px;
+    background-color: white;
 }
 
+body {
+    background: linear-gradient(#d4d4d4, #3a3a3a);
+}
 
 .container {
     outline: solid red 1px;
+    box-shadow: 5px 5px 5px rgb(37, 37, 37);
     
 }
 .row {
@@ -13,11 +20,13 @@
     outline: solid green 1px;
     margin-top: 0px;
     margin-bottom: 45px;
+    
 }
 
 .column,
   .columns {
       outline: solid blue 1px;
+      
   }
 
   p {
@@ -30,7 +39,7 @@
   }
 
   footer{
-      display: flex;
+      /*display: flex;*/
       outline: solid magenta 1px;
   }
 
@@ -44,6 +53,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    background-color: transparent;
+    
+}
+
+h1 {
+    background-color: transparent;
 }
 
 .button {
