@@ -11,13 +11,13 @@ body {
 }
 
 .container {
-    outline: solid red 1px;
+    /*outline: solid red 1px;*/
     box-shadow: 5px 5px 5px rgb(37, 37, 37);
     
 }
 .row {
     position: relative;
-    outline: solid green 1px;
+   /* outline: solid green 1px;*/
     margin-top: 0px;
     margin-bottom: 45px;
     
@@ -25,26 +25,26 @@ body {
 
 .column,
   .columns {
-      outline: solid blue 1px;
+      /*outline: solid blue 1px;*/
       
   }
 
   p {
       text-align: justify;
-      outline: solid lime 1px;
+     /* outline: solid lime 1px;*/
   }
 
   img {
-      outline: solid salmon 1px;
+     /* outline: solid salmon 1px;*/
   }
 
   footer{
       /*display: flex;*/
-      outline: solid magenta 1px;
+     /* outline: solid magenta 1px;*/
   }
 
   .foot{
-      outline: solid brown 1px;
+     /* outline: solid brown 1px;*/
   }
 
   .centered {
@@ -59,10 +59,17 @@ body {
 
 h1 {
     background-color: transparent;
+    
 }
 
 .button {
     color: white;
     background-color: grey;
     width: 100%;
+}
+
+.illumination-inset {
+    max-width: 110px;
+    max-height: 110px;
+    filter: grayscale(100%);
 }
