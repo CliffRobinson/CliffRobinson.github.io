@@ -8,7 +8,7 @@
 
 body {
     background: linear-gradient(#d4d4d4, #3a3a3a);
-    height: 100%;
+
 }
 
 .container {
@@ -24,7 +24,7 @@ body {
     /*outline: solid green 1px;*/
     margin-top: 0px;
     margin-bottom: 45px;
-    height: 100%;
+    
 }
 
 .column,
@@ -92,5 +92,12 @@ h1 {
     background:white;
     box-sizing: border-box;
     
+    box-shadow: 5px 5px 5px rgb(37, 37, 37);
+}
+
+.Q {
+    background: black;
+    width: 100%;
+    color: white;
     box-shadow: 5px 5px 5px rgb(37, 37, 37);
 }
