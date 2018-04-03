@@ -1,7 +1,7 @@
 
 
 * {
-    padding:0px;
+    padding:2px;
     margin: 0px;
     /*background-color: white;*/
 }
@@ -23,8 +23,8 @@ body {
     position: relative;
     /*outline: solid green 1px;*/
     margin-top: 0px;
-    margin-bottom: 45px;
-    overflow: hidden;
+    margin-bottom:0px;
+    
     
 }
 
