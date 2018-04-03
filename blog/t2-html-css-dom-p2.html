@@ -1,57 +1,84 @@
 <html>
   <head>
     <title>Technical Blog 2 </title>
-    <meta charset="UTF-8">
-    <link href="../styles/main.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../images/StockSnap_TG7JUL1ECL.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
   </head>
   
   <body>
-    
-    <div class="QnA">
-        <div class ="Q">
-            <p>What is grid based design?</p>
-        </div>
-        <div class ="A">
-            <p> Everything on the internet is squares, so grid based design is using a grid 
-                to determine where those squares are placed relative to each other.
-            </p>      
-        </div>
-    </div>
+    <div class="container">
 
 
-    <div class="QnA">
-            <div class ="Q">
-                <p>What's all the hype about responsive webpages?</p>
+        <div class="row"> 
+                <div class="four columns">
+                    <a class="button" href="../blog/">Blog </a>
+                </div>
+                
+                <div class="four columns">
+                    <a class="button" href="#">EDA Projects</a>
+                </div>
+                
+                <div class="four columns">
+                    <a class="button" href="#">Personal Projects</a>
+                </div>
+        </div>  
+
+        <hr>
+
+        <div class="row">
+            <div class ="Q four columns">
+                <h3>What is grid based design?</h3>
             </div>
-            <div class ="A">
-                <p> Responsive webpages are ones built to display properly on a variety of screen 
-                    sizes, which is important because more people are accessing the web on phones and tablets,
-                    which have smaller screens. 
-                </p>
+            <div class ="A eight columns">
+                <p> Everything on the internet is squares, so grid based design is using a grid 
+                    to determine where those squares are placed relative to each other.
+                </p>      
             </div>
         </div>
+
+        <hr>
+
+        <div class="row">
+                <div class ="Q four columns">
+                    <h3>What's all the hype about responsive webpages?</h3>
+                </div>
+                <div class ="A eight columns">
+                    <p> Responsive webpages are ones built to display properly on a variety of screen 
+                        sizes, which is important because more people are accessing the web on phones and tablets,
+                        which have smaller screens. 
+                    </p>
+                </div>
+        </div>
+
+        <hr>
+        
 
         <div class="QnA">
-                <div class ="Q">
-                    <p>What is semantic structure?</p>
+                <div class ="Q four columns">
+                    <h3>What is semantic structure?</h3>
                 </div>
-                <div class ="A">
-                    <p> The materials we have studied haven't used this term, but it <a href="https://www.w3schools.com/html/html5_semantic_elements.asp">appears</a>
+                <div class ="A eight columns">
+                        <p>The materials we have studied haven't used this term, but it <a href="https://www.w3schools.com/html/html5_semantic_elements.asp">appears</a>
                         that semantic structure refers to the use of HTML tags that describe specific elements of a website, for example &lt;header&gt; 
                         which defines the header, or &lt;em&gt;, which shows the text within is emphasized. </p>
                     
                 </div>
-            </div>
+        </div>
 
-    
-    <p><a href="../index.html">To index</a></p>
-    </body>
+        <hr>
 
-    <footer>
-            <div class="foot"><a href="https://github.com/CliffRobinson">GitHub</a></div>
-            <div class="foot"><a href="www.linkedin.com/in/clifford-robinson-39b24621">LinkedIn</a></div>
-            <div class="foot">Email:<a href="mailto:clifford.f.robinson@gmail.com">Clifford.F.Robinson@gmail.com</a></div>
-            <div class="foot">© Clifford Robinson, 2018</div>
-          </footer>
+        <p><a href="../index.html">To index</a></p>
+
+    <footer class="row">
+        <!-- Would like to replace text with entypo icons at some point -->
+          <div class="foot two columns"><a href="https://github.com/CliffRobinson">GitHub</a></div>
+          <div class="foot two columns"><a href="https://www.linkedin.com/in/clifford-robinson-39b24621">LinkedIn</a></div>
+          <div class="foot four columns">Email: <a href="mailto:clifford.f.robinson@gmail.com">Clifford.F.Robinson@gmail.com</a></div>
+          <div class="foot three columns">© Clifford Robinson, 2018</div>
+    </footer>
+
+    </div>
+</body>
 </html>
