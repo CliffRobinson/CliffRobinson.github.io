@@ -3,48 +3,52 @@
 * {
     padding:0px;
     margin: 0px;
-    background-color: white;
+    /*background-color: white;*/
 }
 
 body {
     background: linear-gradient(#d4d4d4, #3a3a3a);
+    height: 100%;
 }
 
 .container {
-    outline: solid red 1px;
+   /* outline: solid red 1px;*/
+    background: white;
     box-shadow: 5px 5px 5px rgb(37, 37, 37);
+    min-height: 1000px;
+    
     
 }
 .row {
     position: relative;
-   outline: solid green 1px;
+    /*outline: solid green 1px;*/
     margin-top: 0px;
     margin-bottom: 45px;
-    
+    height: 100%;
 }
 
 .column,
   .columns {
-      outline: solid blue 1px;
+      /*outline: solid blue 1px;*/
       
   }
 
   p {
       text-align: justify;
-      outline: solid lime 1px;
+      /*outline: solid lime 1px;*/
   }
 
   img {
-     outline: solid salmon 1px;
+    /* outline: solid salmon 1px;*/
   }
 
   footer{
       /*display: flex;*/
-     outline: solid magenta 1px;
+     /*outline: solid magenta 1px;*/
   }
 
   .foot{
-     outline: solid brown 1px;
+    /* outline: solid brown 1px;*/
   }
 
   .centered {
@@ -78,9 +82,15 @@ h1 {
 }
 
 .cultural {
-    background: lime;
+    background:black;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(37, 37, 37);
+
 }
 
 .technical {
-    background: orangered;
+    background:white;
+    box-sizing: border-box;
+    
+    box-shadow: 5px 5px 5px rgb(37, 37, 37);
 }
