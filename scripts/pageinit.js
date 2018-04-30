@@ -48,6 +48,7 @@ function initNavBar(nestLevel) {
     navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'blog/">Blog </a></div>';
     navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'">EDA Projects</a></div>';
     navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'">Personal Projects</a></div>';
+    navBar.innerHTML += '<!-- navbar elements created by pageinit-initNavBar -->';
 }
 
 function initFooter() {
