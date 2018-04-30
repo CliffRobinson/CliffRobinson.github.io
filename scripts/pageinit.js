@@ -32,23 +32,22 @@ function initAbsoluteHeaderLinks(pageHeader) {
     pageHeader.innerHTML += '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">';
     pageHeader.innerHTML += '<!-- Absolute links created by pageinit-initHeader-initAbsoluteHeaderLinks -->';
 }
-
+/*
 function initNavBar() {
     let nestLevel = getNestLevel();
     initNavBar(nestLevel);
 }
-
+*/
 function initNavBar(nestLevel) {
-    let rootDir = setRootDir();
-    let navBar = document.getElementsById('navbar');
+    let rootDir = setRootDir(nestLevel);
+    let navBar = document.getElementById('navbar');
 
-    console.log(navbar.innerHTML);
+    
 
-    /*
-      <div class="three columns">
-          <a class="button" href="./">Main Page</a>
-      </div>
-    */
+    navBar.innerHTML = '<div class="three columns"><a class="button" href="'+rootDir+'">Main Page</a></div>';
+    navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'blog/">Blog </a></div>';
+    navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'">EDA Projects</a></div>';
+    navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'">Personal Projects</a></div>';
 }
 
 function initFooter() {
@@ -63,4 +62,5 @@ pageFooter.innerHTML += '<!-- Footer created by pageinit-initFooter() -->';
 
 initFooter();
 initHeader(getNestLevel());
+initNavBar(getNestLevel());
 
