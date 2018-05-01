@@ -2,25 +2,33 @@
   <head>
     <title>MineSpider</title>
     <link rel="icon" type="image/jpeg" href="./images/Willem-Dafoe-1.jpg">
+    <meta name="nest-level" content="1">
+    <!--
+    <script src="lib/tests.js"></script>
+    <script src="lib/lib.js"></script>
+    <script src="minesweeper.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" href="./Styles/main.css">
     <link href="./Styles/styles.css"  type="text/css" rel="stylesheet">
-
+    <link rel="stylesheet" href="minesweeper.css">
+    
+-->
     <link rel="stylesheet" href="minesweeper.css">
     <script src="lib/tests.js"></script>
     <script src="lib/lib.js"></script>
     <script src="minesweeper.js"></script>
-
-
-
+    
+   
+    
   </head>
   
 <body>
 
     <div class="container">
 
-            <div class="row"> 
+            <div class="row" id="navbar"> 
                 <div class="four columns">
                     <a class="button" href="../blog/">Blog </a>
                 </div>
@@ -56,8 +64,14 @@
     </footer>  
 
     </div>
-      
-   
+    
+    <script src="../scripts/pageinit.js"></script>
+    <!-- 
+    <script>
+    let pageHeader = document.getElementsByTagName("head")[0];
+    pageHeader.innerHTML += '<link rel="stylesheet" href="minesweeper.css">';
+    </script>
+    -->
 
 </body>
 

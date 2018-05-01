@@ -8,8 +8,17 @@ function initHeader(level) {
     //Now that the absolute links are made, let's make the relative links. 
     let rootDir = setRootDir(level);
 
-    pageHeader.innerHTML += '<link href="'+rootDir+'styles/main.css" rel="stylesheet" type="text/css" >';
-    pageHeader.innerHTML += '<link href="'+rootDir+'styles/styles.css" rel="stylesheet" type="text/css" >';
+    let insert = '\n<meta name="nest-level" content="'+level+'">';
+
+    insert = '<link href="'+rootDir+'styles/main.css" rel="stylesheet" type="text/css" >'+'\n'+insert;
+    insert = '<link href="'+rootDir+'styles/styles.css" rel="stylesheet" type="text/css" >'+'\n'+insert;
+
+    let target = /<meta name="nest-level" content=".">/
+
+    pageHeader.innerHTML = pageHeader.innerHTML.replace(target, insert);
+
+    //pageHeader.innerHTML += '<link href="'+rootDir+'styles/main.css" rel="stylesheet" type="text/css" >';
+    //pageHeader.innerHTML += '<link href="'+rootDir+'styles/styles.css" rel="stylesheet" type="text/css" >';
 }
 
 function setRootDir(level) {
@@ -27,10 +36,23 @@ function setRootDir(level) {
 }
 
 function initAbsoluteHeaderLinks(pageHeader) {
-    pageHeader.innerHTML += '<meta charset="UTF-8">';
-    pageHeader.innerHTML += '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">';
-    pageHeader.innerHTML += '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">';
-    pageHeader.innerHTML += '<!-- Absolute links created by pageinit-initHeader-initAbsoluteHeaderLinks -->';
+    
+    let insert = '\n<meta name="nest-level" content="'+getNestLevel()+'">';
+    insert = '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">'+'\n'+insert;
+    insert = '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">'+'\n'+insert;
+    insert = '<!-- Absolute links created by pageinit-initHeader-initAbsoluteHeaderLinks -->'+'\n'+insert;
+
+    let target = /<meta name="nest-level" content=".">/
+
+    pageHeader.innerHTML = pageHeader.innerHTML.replace(target, insert);
+
+
+
+
+    //pageHeader.innerHTML += '<meta charset="UTF-8">';
+    //pageHeader.innerHTML += '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">';
+    //pageHeader.innerHTML += '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">';
+    //pageHeader.innerHTML += '<!-- Absolute links created by pageinit-initHeader-initAbsoluteHeaderLinks -->';
 }
 /*
 function initNavBar() {
