@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Friends, Romans, Cipherists</title>
+    <meta name="nest-level" content="2">
+    <link rel="icon" href="./images/f25306239a7bc5ee5d1e20754575c325.jpg" type="image/jpg">
+    <link href="./caesar.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row" id="navbar">
+
+        </div>
+        <form>
+        <div class="row"> 
+            <h1>It is time for ancient codes!!!!</h1>
+            
+            <div class="shiftselector twelve columns">
+                <label for="shiftSelect">Shift:     </label>
+                <select id="shiftSelect"></select>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="encoded six columns">
+              <label for="encoded">
+                  Encoded:
+              </label>
+              <textarea id="encoded" placeholder="THE DIE IS CAST!" class="u-full-width"></textarea>
+              <a class="button" id="decode">Decode</a>
+            </div>
+
+            <div class="decoded six columns">
+              <label for="decoded">
+                Decoded:
+              </label>
+              <textarea id="decoded" placeholder="GUR QVR VF PNFG!" class="u-full-width"></textarea>
+              <a class="button" id="encode">Encode</a>
+          </div>
+        </div>
+      </form>
+        <hr>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="./caesar.js"></script>
+    <script src="../../scripts/pageinit.js"></script>
+  </body>
+</html>

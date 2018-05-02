@@ -1,0 +1,17 @@
+body {
+    background-image: url(./images/Siege-alesia-vercingetorix-jules-cesar.jpg);
+    /* Image taken from https://upload.wikimedia.org/wikipedia/commons/9/93/Siege-alesia-vercingetorix-jules-cesar.jpg,
+    prettuy sure that makes it open source, but I'll take it down if you ask, don't sue me. */
+    background-size: cover;
+}
+
+.container {
+    background: rgba(255,255,255,0.8);
+}
+
+#encoded, #decoded {
+    /*width: 100%;*/
+    height:400px;
+    background: rgba(255,255,255,0.5);
+    
+}
