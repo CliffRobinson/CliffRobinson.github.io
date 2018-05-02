@@ -14,28 +14,38 @@
         <form>
         <div class="row"> 
             <h1>It is time for ancient codes!!!!</h1>
+            <p>
+              Hey friends, do you like cryptography and also classical history? Well I hope you like further alliteration, because it's time to play with the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher!</a>.
+            </p>
             
+            <p>
+              This code, used by Julius Caesar (depicted in the background, <a href="https://en.wikipedia.org/wiki/Julius_Caesar#Conquest_of_Gaul"> receiving submission from the Gauls</a>) in his correspondence, works by replacing each letter of the alphabet with the letter a given number of places away in the alphabet, which is specified with the shift selector below. </p>
+            <p>
+              Enter your text to encode/decode in the box, press the button, and the corresponding text will appear in the other box. Have fun!
+            </p>
             <div class="shiftselector twelve columns">
                 <label for="shiftSelect">Shift:     </label>
                 <select id="shiftSelect"></select>
             </div>
         </div>
         <div class="row"> 
+            <div class="decoded six columns">
+                <label for="decoded">
+                  Text to Encode:
+                </label>
+                <textarea id="decoded" placeholder="THE DIE IS CAST!" class="u-full-width"></textarea>
+                <a class="button" id="encode">Encode</a>
+            </div>
+
             <div class="encoded six columns">
               <label for="encoded">
-                  Encoded:
+                  Text to Decode:
               </label>
-              <textarea id="encoded" placeholder="THE DIE IS CAST!" class="u-full-width"></textarea>
+              <textarea id="encoded" placeholder="GUR QVR VF PNFG!" class="u-full-width"></textarea>
               <a class="button" id="decode">Decode</a>
             </div>
 
-            <div class="decoded six columns">
-              <label for="decoded">
-                Decoded:
-              </label>
-              <textarea id="decoded" placeholder="GUR QVR VF PNFG!" class="u-full-width"></textarea>
-              <a class="button" id="encode">Encode</a>
-          </div>
+
         </div>
       </form>
         <hr>
