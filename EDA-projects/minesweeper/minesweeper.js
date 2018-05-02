@@ -36,7 +36,7 @@ function startGame () {
   //console.log("Length of cells is: "+board.cells.length);
   document.getElementsByClassName('board')[0].addEventListener('click', checkForLoss);
   document.getElementsByClassName('board')[0].addEventListener('contextmenu',checkForLoss);
-  document.getElementsByTagName('button')[0].addEventListener('click', resetBoard);
+  document.getElementsByClassName('restartbutton')[0].addEventListener('click', resetBoard);
 }
 
 function labelSurroundingMines() {
@@ -80,7 +80,7 @@ function checkForLoss() {
       
       if (board.cells[i].isMine == true && board.cells[i].hidden == false){
         //alert("You have lost.");
-        console.log('Should reveal ze button now');
+        //console.log('Should reveal ze button now');
         document.getElementById('kaboom').play();
         revealButton();
         //resetBoard();

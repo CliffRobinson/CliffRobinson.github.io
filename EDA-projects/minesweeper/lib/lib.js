@@ -9,7 +9,8 @@ function initBoard () {
     displayMessage("<em>These hints are designed to help you build your board object bit by bit. If you're seeing one, don't worry: you didn't do anything wrong, you're just not finished yet!</em>", 'notes')
     return null
   }
-  displayMessage("You are Spider-Man, and the hideous Green Goblin could be behind any of these doors!!! <br> Can you block them with your webs before he gets you?!?")
+  displayMessage(
+    "You are Spider-Man, and the hideous Green Goblin could be behind any of these doors!!! <br> Can you block them with your webs before he gets you?!? <br> Right click (long press on Android mobiles) on cells to block them")
   board.cells.sort(cellCompare)
   var boardNode = document.getElementsByClassName('board')[0]
   drawBoard(boardNode)
@@ -71,7 +72,7 @@ function showCell (evt) {
   evt.target.classList.remove('hidden')
   evt.target.classList.remove('marked')
   if (evt.target.classList.contains('mine')) {
-    displayMessage('Oh no, he got you!!!')
+    displayMessage('Oh no, he got you!!!<br><br>')
     
     //////////////////////////////////////////////////////////
     let wnum = Math.floor(Math.random()*5);

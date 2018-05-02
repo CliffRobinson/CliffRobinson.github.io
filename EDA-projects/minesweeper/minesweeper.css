@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:50px;
 }
 
 #message {
@@ -94,7 +95,7 @@ div.marked, div.marked:hover {
 }
 
 .restart {
-  margin-left: 456px;
+  /*margin-left: 456px;*/
 }
 
 .container {
