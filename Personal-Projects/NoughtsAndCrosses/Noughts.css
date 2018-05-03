@@ -1,0 +1,32 @@
+.p1 {
+    background-color: aqua;
+}
+
+.p2 {
+    background-color: blue;
+}
+
+#board {
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    outline: solid white 1px;
+}
+
+.square {
+    position: relative;
+    padding:0px;
+    outline: solid white 1px;
+    width: 33.333333333333333333333333333333333333333333333%;
+    
+}
+
+.square:before{
+    content:"";
+    display: block;
+    padding-top: 100%;
+}
+
+.pink {
+    background-color: pink;
+}
