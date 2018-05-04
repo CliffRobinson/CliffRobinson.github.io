@@ -12,7 +12,7 @@ function initBoard(){
         }
     }
 
-    document.getElementById('p1').innerHTML = "Player 1: "+p1name+",<br>You're playing Os."
+    document.getElementById('p1').innerHTML = "Player 1: "+p1name+",<br>You're playing Os.<br>It's your turn.";
     document.getElementById('p2').innerHTML = "Player 2: "+p2name+",<br>You're playing Xs."
 
 }
@@ -32,12 +32,28 @@ function pinkify(){
 function fillSquare(){
     if (noughtPlayerActive){
         event.target.classList.add('nought');
-        noughtPlayerActive = false;
+        document.getElementById('p2').innerHTML += "<br>It's your turn.";
+        document.getElementById('p1').innerHTML = document.getElementById('p1').innerHTML.replace("<br>It's your turn.","");
     } else {
         event.target.classList.add('cross');
-        noughtPlayerActive = true;
+        document.getElementById('p1').innerHTML += "<br>It's your turn.";
+        document.getElementById('p2').innerHTML = document.getElementById('p2').innerHTML.replace("<br>It's your turn.","");
+        
     }
     event.target.removeEventListener('click',fillSquare);
+    switchActivePlayer();
+    checkForWin();
+    
+}
+
+function switchActivePlayer(){
+    noughtPlayerActive = !noughtPlayerActive;
+    document.getElementById('p1').classList.toggle('active');
+    document.getElementById('p2').classList.toggle('active');
+}
+
+function checkForWin(){
+    //next step is to implement this. 
 }
 
 var noughtPlayerActive = true;
