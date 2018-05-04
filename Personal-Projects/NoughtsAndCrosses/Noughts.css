@@ -1,10 +1,4 @@
-.p1 {
-    background-color: aqua;
-}
 
-.p2 {
-    background-color: blue;
-}
 
 #board {
     background-color: gray;
@@ -29,4 +23,21 @@
 
 .pink {
     background-color: pink;
+}
+
+.nought {
+    background-image: url(./images/nought.png);
+    outline: solid black 1px;
+}
+
+
+.cross {
+    background-image: url(./images/cross.png);
+    outline: solid black 1px;
+}
+
+.active {
+    background: black;
+    font-weight: bold;
+    color: white;
 }
