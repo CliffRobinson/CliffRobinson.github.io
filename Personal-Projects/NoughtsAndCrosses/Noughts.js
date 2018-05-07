@@ -1,13 +1,13 @@
 function initBoard(){
     let board = document.getElementById('board');
-    let size = 3;
+    
 
     let p1name = 'Cliff';
     let p2name = 'Kytheon Iora';
 
     for (let i = 0; i<size;i++){
         for (let j = 0; j<size;j++){
-            board.innerHTML += '<div class="square"></div>';
+            board.innerHTML += '<div class="square" id="'+i+'-'+j+'"></div>';
             //Square '+i+'-'+j+'
         }
     }
@@ -41,8 +41,9 @@ function fillSquare(){
         
     }
     event.target.removeEventListener('click',fillSquare);
-    switchActivePlayer();
     checkForWin();
+    switchActivePlayer();
+    
     
 }
 
@@ -53,9 +54,67 @@ function switchActivePlayer(){
 }
 
 function checkForWin(){
-    //next step is to implement this. 
+    let activeSymbol = '';
+
+    if (noughtPlayerActive){
+        activeSymbol = 'nought';
+    } else {
+        activeSymbol = 'cross';
+    }
+
+    checkRowWin(activeSymbol);
+    checkDiagonalWin(activeSymbol);
+}
+
+function checkRowWin(activeSymbol) {
+    let rowChecker = true;
+    let columnChecker = true
+    
+    for (let i = 0; i <size; i++){
+        rowChecker = true;
+        columnChecker = true;
+        
+        for (let j = 0; j<size;j++){
+            
+            //console.log("Checking: "+i+'-'+j);
+            if (document.getElementById(i+'-'+j).classList.contains(activeSymbol) == false){
+                rowChecker = false;
+            }
+
+            if (document.getElementById(j+'-'+i).classList.contains(activeSymbol) == false){
+                columnChecker = false;
+            }
+        }
+
+        if (rowChecker || columnChecker) {
+            alert("You Wins!");
+            
+        }
+    }
+}
+
+function checkDiagonalWin(activeSymbol){
+    let inverse = size-1;
+    let downChecker = true;
+    let upChecker = true;
+
+    for (let i = 0;i<size;i++){
+        if (document.getElementById(i+'-'+i).classList.contains(activeSymbol) == false){
+            downChecker = false;
+        }
+
+        if (document.getElementById(i+'-'+inverse).classList.contains(activeSymbol) == false){
+            upChecker = false;
+        }
+        inverse--;
+    }
+
+    if (downChecker || upChecker){
+        alert("Diagonal Win!");
+    }
 }
 
 var noughtPlayerActive = true;
+let size = 3;
 initBoard();
 addSquareEventListeners();
