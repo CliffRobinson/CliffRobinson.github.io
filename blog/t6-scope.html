@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Scope </title>
+    <link rel="icon" type="image/jpeg" href="../images/StockSnap_TG7JUL1ECL.jpg">
+    <meta name="nest-level" content="1">
+
+  </head>
+  
+<body>
+
+    <div class="container" >
+            
+            <div class="row" id ="navbar"> 
+                This div is populated by my navbar script
+            </div>
+                
+          
+    
+    <div class="row" >
+        <div class ="four columns Q">
+            <h3>What is 'scope', and how does it work in JavaScript?</h3>
+        </div>
+        <div class ="eight columns A">
+            <p>Scope refers to the 'visibility' of a piece of code, or what other pieces of code can access it. Let's say I want to define a variable like <code>let pi = 3.1415926</code>. The scope of that variable determines whether other code can access it. If I was to write a function like this:
+            </p>
+
+            <pre>
+                <code>
+function getCircleArea(radius){
+    let pi = 3.1415926;
+    return radius * radius * pi;
+}
+                </code>
+            </pre>
+           
+            The function would work correctly, and access pi to do the calculation. However, if I wrote another function that needed pi, like so:   
+
+            <pre>
+                <code>
+function getCircleArea(radius){
+    let pi = 3.1415926;
+    return radius * radius * pi;
+}            
+
+function getCircleVolume(radius){
+    return radius * radius * radius * pi *4/3;
+}                  
+                </code>
+            </pre>
+            <p>
+                The second function would not work. This is because the pi variable is only visible within the function that defines it - when the computer runs this code, it waits until getCircleArea is called, allocates some space for the pi variable, and then deletes it when the function is finished. When getCircleVolume is called, there is no pi variable for it to reference, and the function will not work. As defined right now, the pi variable has <i>functional</i> scope. However, if I moved the definition of pi outside of any function, like this:
+            </p>
+            <pre>
+                <code>
+let pi = 3.1415926;
+
+function getCircleArea(radius){
+    
+    return radius * radius * pi;
+}            
+
+function getCircleVolume(radius){
+    return radius * radius * radius * pi *4/3;
+}   
+                </code>
+            </pre>
+            
+            <p>
+                The the pi variable would instead have <i>global</i> scope, meaning it can be accessed by any code in the file. Now, both functions can access pi. Apparently, use of global variables like this is frowned upon in JS, even though it's super common practise in Java. I'm sure I'll learn why soon. 
+            </p>
+
+            <p>
+                There are some odd edge cases involving <code>let</code>, <code>var</code>, and the way they are scoped - let has block scope and var has functional scope, although there's no difference between the two in the examples above. Eloquent JS recommends using let where you can, which works fine for me, and produces less confusion.
+            </p>
+        </div> 
+        
+    </div>
+    
+    <p><a href="./index.html">To index</a></p>
+
+    <footer class="row">
+            This footer is populated by my navbar script
+    </footer>  
+    </div>     
+    
+    <script src="../scripts/pageinit.js"></script>
+    
+</body>
+
+
+</html>
