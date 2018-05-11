@@ -11,10 +11,37 @@ let size = 3;
 
 document.addEventListener('DOMContentLoaded',initBoard);
 
+
+
+function getMoreOptions(){
+    document.getElementById('options2').classList.toggle('invisible');
+}
+
+function showspec(){
+    let gametype = '';
+
+    for (var i of document.getElementsByName('gametype')){
+        if (i.checked){
+            gametype = i.value;
+        }
+    }
+
+
+
+    alert(
+        'Gametype = '+gametype+
+        '\nP1name = '+ document.getElementById('pname1').value+
+        '\nP2name = '+ document.getElementById('pname2').value+
+        '\nBoard size = '+document.getElementById('boardsize').value
+
+    );
+    document.getElementById('setup').classList.toggle('invisible');
+}
+
 function initBoard(){
     let board = document.getElementById('board');
-    
-
+    document.getElementById('options1').addEventListener('click',getMoreOptions);
+    document.getElementById('starter').addEventListener('click',showspec);
     let p1name = 'Cliff';
     let p2name = 'Kytheon Iora';
 

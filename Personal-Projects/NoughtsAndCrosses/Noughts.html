@@ -7,10 +7,6 @@
   <!-- stylesheet etc links should be populated below by pageinit-initHeader -->
   <meta name="nest-level" content="2">
   <link href="./Noughts.css" type="text/css" rel="stylesheet">
-  
-
-
-
 </head>
 <body>
   <div class="container">
@@ -21,6 +17,32 @@
 
     <div class="row" id="navbar">
       If you're seeing this, my script didn't work.
+    </div>
+
+    <div class="row" id="setup">
+      <form> 
+      Hello, it's time to play noughts and crosses! Would you like to play: <br><br>
+        <input type="radio" name="gametype" value="hotseat">With a human friend on the same computer? <br>
+        <input type="radio" name="gametype" value="multi" disabled>With a human friend on a different computer? (Coming soon) <br>
+        <input type="radio" name="gametype" value="ai" disabled>With a robot friend? <br><br>
+        And how big should the board be?
+        <select id="boardsize">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br>
+        <a class="button four columns" id="options1">Select</a>
+        <br>
+      </form>
+      <div class="invisible" id="options2">
+        What is your name? 
+        <input type="text" id="pname1">
+        <br>
+        And your friend's name?
+        <input type="text" id="pname2">
+        <br>
+        <a class="button" id="starter">Start the game!</a>
+      </div>
     </div>
 
     <div class="row">
