@@ -1,3 +1,20 @@
+/*
+    Next steps:
+    - dynamic square sizing
+    - nought/cross image auto resize : DONE!
+    - Custom game initiation screen.
+    - networkiiiing!
+*/
+
+var noughtPlayerActive = true;
+let size = 3;
+
+document.addEventListener('DOMContentLoaded',initBoard);
+
+//initBoard();
+
+
+
 function initBoard(){
     let board = document.getElementById('board');
     
@@ -12,8 +29,12 @@ function initBoard(){
         }
     }
 
+    addSquareEventListeners();
+
     document.getElementById('p1').innerHTML = "Player 1: "+p1name+",<br>You're playing Os.<br>It's your turn.";
     document.getElementById('p2').innerHTML = "Player 2: "+p2name+",<br>You're playing Xs."
+
+    document.getElementsByTagName('head')[0].innerHTML += '<!-- here is a comment -->';
 
 }
 
@@ -114,16 +135,5 @@ function checkDiagonalWin(activeSymbol){
     }
 }
 
-var noughtPlayerActive = true;
-let size = 4;
-initBoard();
-addSquareEventListeners();
 
 
-/*
-    Next steps:
-    - dynamic square sizing
-    - nought/cross image auto resize
-    - Custom game initiation screen.
-    - networkiiiing!
-*/

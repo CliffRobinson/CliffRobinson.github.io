@@ -11,7 +11,7 @@
     position: relative;
     padding:0px;
     outline: solid white 1px;
-    width: 25%;
+    width: 33.33333333333333333333333333333333333%;
     
 }
 
@@ -28,12 +28,14 @@
 .nought {
     background-image: url(./images/nought.png);
     outline: solid black 1px;
+    background-size: contain;
 }
 
 
 .cross {
     background-image: url(./images/cross.png);
     outline: solid black 1px;
+    background-size: contain;
 }
 
 .active {
