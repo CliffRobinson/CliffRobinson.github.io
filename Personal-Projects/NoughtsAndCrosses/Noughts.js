@@ -115,6 +115,15 @@ function checkDiagonalWin(activeSymbol){
 }
 
 var noughtPlayerActive = true;
-let size = 3;
+let size = 4;
 initBoard();
 addSquareEventListeners();
+
+
+/*
+    Next steps:
+    - dynamic square sizing
+    - nought/cross image auto resize
+    - Custom game initiation screen.
+    - networkiiiing!
+*/
