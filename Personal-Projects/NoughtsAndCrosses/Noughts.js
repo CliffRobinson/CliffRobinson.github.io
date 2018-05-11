@@ -11,10 +11,6 @@ let size = 3;
 
 document.addEventListener('DOMContentLoaded',initBoard);
 
-//initBoard();
-
-
-
 function initBoard(){
     let board = document.getElementById('board');
     
@@ -34,7 +30,7 @@ function initBoard(){
     document.getElementById('p1').innerHTML = "Player 1: "+p1name+",<br>You're playing Os.<br>It's your turn.";
     document.getElementById('p2').innerHTML = "Player 2: "+p2name+",<br>You're playing Xs."
 
-    document.getElementsByTagName('head')[0].innerHTML += '<!-- here is a comment -->';
+    document.getElementsByTagName('head')[0].innerHTML += '<style> .square { width:'+(100/size)+'%; }  </style>';
 
 }
 
