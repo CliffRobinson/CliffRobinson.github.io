@@ -47,3 +47,8 @@
 .invisible {
     display: none;
 }
+
+#restart-row {
+    background: fuchsia;
+    height: 100px;
+}
