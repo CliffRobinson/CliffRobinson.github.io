@@ -3,7 +3,9 @@
     - dynamic square sizing: DONE!
     - nought/cross image auto resize : DONE!
     - Custom game initiation screen: DONE!
-    - Game restart bar.
+    - Game restart bar: DONE!
+    - tidy option bars
+    - AI
     - networkiiiing!
 */
 
@@ -17,6 +19,16 @@ document.addEventListener('DOMContentLoaded',startSite);
 function startSite(){
     document.getElementById('options1').addEventListener('click',getMoreOptions);
     document.getElementById('starter').addEventListener('click',setOptions);
+    document.getElementById('play-again').addEventListener('click', restart);
+    document.getElementById('change-options').addEventListener('click', changeOptions);
+
+    /*
+    document.getElementById('hider').addEventListener('click', 
+        function() {
+            document.getElementById('restart-buttons').classList.toggle('invisible');
+        }
+    );
+    */
 }
 
 
@@ -40,27 +52,36 @@ function setOptions(){
     p2name = document.getElementById('pname2').value;
     
 
-    alert(
+    /*alert(
         'Gametype = '+gametype+
         '\nP1name = '+ p1name+
         '\nP2name = '+ p2name+
         '\nBoard size = '+size
 
-    );
+    );*/
     document.getElementById('setup').classList.toggle('invisible');
 
-    if (Math.random >=0.5){
+    if (Math.random() >=0.5){
         initBoard(size, p1name, p2name);
     } else{
         initBoard(size, p2name, p1name);
-    }
+    }  
+}
 
-    
+function changeOptions(){
+    document.getElementById('setup').classList.toggle('invisible');
+    document.getElementById('restart-buttons').classList.toggle('invisible');
 }
 
 function initBoard(size, p1name, p2name){
     alert(p1name+', you go first!');
+    noughtPlayerActive = true;
     let board = document.getElementById('board');
+    board.innerHTML = "";
+    document.getElementById('p1').innerHTML = '';
+    document.getElementById('p1').classList.add('active');
+    document.getElementById('p2').innerHTML = '';
+    document.getElementById('p2').classList.remove('active');
     //let p1name = 'Cliff';
     //let p2name = 'Kytheon Iora';
 
@@ -78,6 +99,18 @@ function initBoard(size, p1name, p2name){
 
     document.getElementsByTagName('head')[0].innerHTML += '<style> .square { width:'+(100/size)+'%; }  </style>';
 
+}
+
+function restart(){
+    document.getElementById('restart-buttons').classList.toggle('invisible');
+
+    
+    if (Math.random() >=0.5){
+        initBoard(size, p1name, p2name);
+    } else{
+        initBoard(size, p2name, p1name);
+    }
+    
 }
 
 function addSquareEventListeners(){
@@ -183,5 +216,6 @@ function activePlayerWins(){
     } else {
         alert (p2name+', you win! Congratulations');
     }
+    document.getElementById('restart-buttons').classList.toggle('invisible');
 }
 
