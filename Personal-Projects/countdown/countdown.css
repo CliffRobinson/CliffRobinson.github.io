@@ -14,3 +14,6 @@ label {
     margin-right: 1em; 
 }
 
+#numbers-output {
+    height: 250px;
+}
