@@ -5,6 +5,8 @@
   <meta name="nest-level" content="2">
   <link rel="icon" type="image/png" href="http://i0.kym-cdn.com/photos/images/newsfeed/000/869/487/ccf.png">
   <!-- stylesheet etc links should be populated below by pageinit-initHeader -->
+  <link rel="stylesheet" type="text/css" href="./countdown.css">
+  <script src="./countdown.js"></script>
 </head>
 <body>
   <div class="container">
@@ -42,11 +44,15 @@
     <div class="row">
         <label for="letters-input">Letters:</label>
         <input type="text" id="letters-input">
-        <a class="button two columns" id="letter-solve">Solve</a>
+        
     </div>
     
     <div class="row">
-        <textarea id="letters-output" disabled></textarea>
+      <a class="button" id="letter-solve">Solve</a>
+    </div>
+
+    <div class="row">
+        <textarea class="u-full-width" id="letters-output" disabled></textarea>
     </div>
 
     <hr>
@@ -65,25 +71,35 @@
       </div>
   
       <div class="row">
-            <a class="button one columns" id="1">1</a>
-            <a class="button one columns" id="2">2</a>
-            <a class="button one columns" id="3">3</a>
-            <a class="button one columns" id="4">4</a>
-            <a class="button one columns" id="5">5</a>
-            <a class="button one columns" id="6">6</a>
-            <a class="button one columns" id="7">7</a>
-            <a class="button one columns" id="8">8</a>
-            <a class="button one columns" id="9">9</a>
-            <a class="button one columns" id="10">10</a>
-            <a class="button one columns" id="25">25</a>
-            <a class="button one columns" id="50">50</a>
-            <a class="button one columns" id="75">75</a>
-            <a class="button one columns" id="100">100</a>
-            <a class="button one columns" id="number-solve">Solve</a>
+        <a class="button number-button" id="1">1</a>
+        <a class="button number-button" id="2">2</a>
+        <a class="button number-button" id="3">3</a>
+        <a class="button number-button" id="4">4</a>
+        <a class="button number-button" id="5">5</a>
+        <a class="button number-button" id="6">6</a>
+        <a class="button number-button" id="7">7</a>
+        <a class="button number-button" id="8">8</a>
+        <a class="button number-button" id="9">9</a>
+        <a class="button number-button" id="10">10</a>
+        <a class="button number-button" id="25">25</a>
+        <a class="button number-button" id="50">50</a>
+        <a class="button number-button" id="75">75</a>
+        <a class="button number-button" id="100">100</a>
+        <a class="button number-button" id="del">DEL</a>
+        
+      </div>
+
+      <div class="row" >
+        <label for="target-number"> Target Number:</label>
+        <input type="text" id="target-number">
+      </div>
+
+      <div class="row" >
+        <a class="button " id="number-solve">Solve</a>
       </div>
 
       <div class="row">
-            <textarea id="numbers-output" disabled></textarea>
+            <textarea class="u-full-width" id="numbers-output" disabled></textarea>
       </div>
 
       <hr>
