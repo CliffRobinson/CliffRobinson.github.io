@@ -16,6 +16,7 @@ let p1type = ""
 let p2name = 'B';
 let p2type = ""
 let gametype = '';
+let isWon = false;
 
 document.addEventListener('DOMContentLoaded',startSite);
 
@@ -72,11 +73,18 @@ function setOptions(){
     
     document.getElementById('setup').classList.toggle('invisible');
 
-    //if (Math.random() >=0.5){
-        //initBoard(size, p1name, p1type, p2name, p2type);
-    //} else{
-        initBoard(size, p2name, p2type, p1name, p1type);
-    //}  
+    if (Math.random() >=0.5){
+        initBoard(size, p1name, p1type, p2name, p2type);
+    } else {
+        let temp = "";
+        temp = p1name;
+        p1name = p2name;
+        p2name = temp;
+        temp = p2type;
+        p2type = p1type
+        p1type = temp;
+        initBoard(size, /*p2name, p2type, p1name, p1type*/);
+    }  
 }
 
 function changeOptions(){
@@ -84,10 +92,10 @@ function changeOptions(){
     document.getElementById('restart-buttons').classList.toggle('invisible');
 }
 
-function initBoard(size, p1name, p1type, p2name, p2type){
+function initBoard(size, /*p1name, p1type, p2name, p2type*/){
     alert(p1name+', you go first!');
     noughtPlayerActive = true;
-
+    isWon = false;
     let board = document.getElementById('board');
     board.innerHTML = "";
     document.getElementById('p1').innerHTML = '';
@@ -128,13 +136,18 @@ function AITakeTurn(){
 function restart(){
     document.getElementById('restart-buttons').classList.toggle('invisible');
 
-    
     if (Math.random() >=0.5){
-        initBoard(size, p1name, p1type, p2name, p2type)
-    } else{
-        initBoard(size, p2name, p2type, p1name, p1type)
-    }
-    
+        initBoard(size, p1name, p1type, p2name, p2type);
+    } else {
+        let temp = "";
+        temp = p1name;
+        p1name = p2name;
+        p2name = temp;
+        temp = p2type;
+        p2type = p1type
+        p1type = temp;
+        initBoard(size, /*p2name, p2type, p1name, p1type*/);
+    } 
 }
 
 function addSquareEventListeners(){
@@ -157,7 +170,10 @@ function fillSquare(square){
     }
     square.removeEventListener('click',fillSquare);
     checkForWin();
-    switchActivePlayer();    
+    if (isWon == false){
+        switchActivePlayer();    
+    }
+    
 }
 
 function clickSquare() {
@@ -244,6 +260,12 @@ function activePlayerWins(){
     } else {
         alert (p2name+', you win! Congratulations');
     }
+    isWon = true;
+
+    for (let x of document.getElementsByClassName('square')){
+        x.removeEventListener('click', clickSquare);
+    }
+
     document.getElementById('restart-buttons').classList.toggle('invisible');
 }
 
