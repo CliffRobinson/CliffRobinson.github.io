@@ -72,11 +72,11 @@ function setOptions(){
     
     document.getElementById('setup').classList.toggle('invisible');
 
-    if (Math.random() >=0.5){
-        initBoard(size, p1name, p1type, p2name, p2type);
-    } else{
+    //if (Math.random() >=0.5){
+        //initBoard(size, p1name, p1type, p2name, p2type);
+    //} else{
         initBoard(size, p2name, p2type, p1name, p1type);
-    }  
+    //}  
 }
 
 function changeOptions(){
@@ -130,9 +130,9 @@ function restart(){
 
     
     if (Math.random() >=0.5){
-        initBoard(size, p1name, p2name);
+        initBoard(size, p1name, p1type, p2name, p2type)
     } else{
-        initBoard(size, p2name, p1name);
+        initBoard(size, p2name, p2type, p1name, p1type)
     }
     
 }
