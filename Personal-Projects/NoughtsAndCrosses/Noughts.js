@@ -4,8 +4,8 @@
     - nought/cross image auto resize : DONE!
     - Custom game initiation screen: DONE!
     - Game restart bar: DONE!
-    - tidy option bars
-    - AI
+    - tidy option bars: DONE!
+    - AI: DONE!
     - networkiiiing!
 */
 
@@ -128,7 +128,7 @@ function AITakeTurn(){
     let emptySquares = Array.from(document.getElementsByClassName('square'));
     emptySquares = emptySquares.filter(x => (!x.classList.contains('nought') && !x.classList.contains('cross')));
     let randoNum = Math.floor(Math.random()*emptySquares.length);
-    alert("AI wants to click on: " + emptySquares[randoNum].id);
+    //alert("AI wants to click on: " + emptySquares[randoNum].id);
     fillSquare(emptySquares[randoNum]);
 
 }
