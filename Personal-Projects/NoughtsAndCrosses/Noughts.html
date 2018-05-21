@@ -20,29 +20,30 @@
     </div>
 
     <div class="row" id="setup">
-      <form> 
+      <div class="six columns" >
       Hello, it's time to play noughts and crosses! Would you like to play: <br><br>
-        <input type="radio" name="gametype" value="hotseat">With a human friend on the same computer? <br>
-        <input type="radio" name="gametype" value="multi" disabled>With a human friend on a different computer? (Coming soon) <br>
-        <input type="radio" name="gametype" value="ai" disabled>With a robot friend? <br><br>
-        And how big should the board be?
+        <input type="radio" name="gametype" value="hotseat" id="hotseat">With a human friend on the same computer? <br>
+        <input type="radio" name="gametype" value="ai" id="ai" >With a robot friend? <br>        
+        <input type="radio" name="gametype" value="multi" id="multi" disabled>With a human friend on a different computer? (Coming soon) <br>
+        <!-- <a class="button four columns" id="options1">Select</a>
+        <br> -->
+      </div>
+      <div class="six columns" id="options2">
+        <label for="p1name">What is your name?</label>
+        <input type="text" id="pname1" value="A"><br>
+        <label for="p2name" id="pname2-label">And your friend's name?</label>
+        <input type="text" id="pname2" value="B">
+        <br><br>
+        <label for="boardsize">And how big should the board be?</label>
+        
         <select id="boardsize">
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
         </select><br>
-        <a class="button four columns" id="options1">Select</a>
-        <br>
-      </form>
-      <div class="invisible" id="options2">
-        What is your name? 
-        <input type="text" id="pname1" value="A">
-        <br>
-        And your friend's name?
-        <input type="text" id="pname2" value="B">
-        <br>
-        <a class="button" id="starter">Start the game!</a>
+        
       </div>
+      <a class="button" id="starter">Start the game!</a>
     </div>
 
     <div class="row">

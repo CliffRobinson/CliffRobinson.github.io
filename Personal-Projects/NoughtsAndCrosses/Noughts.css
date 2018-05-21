@@ -49,6 +49,16 @@
 }
 
 #restart-row {
-    
     height: 100px;
+}
+
+label {
+    font-weight: normal;
+    /*display: inline-block;*/
+    float: left;
+    
+}
+
+input, select {
+    float: right;
 }
