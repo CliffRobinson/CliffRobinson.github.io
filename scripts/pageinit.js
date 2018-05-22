@@ -69,7 +69,7 @@ function initNavBar(nestLevel) {
     navBar.innerHTML = '<div class="three columns"><a class="button" href="'+rootDir+'">Main Page</a></div>';
     navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'blog/">Blog </a></div>';
     navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'EDA-projects">EDA Projects</a></div>';
-    navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'">Personal Projects</a></div>';
+    navBar.innerHTML += '<div class="three columns"><a class="button" href="'+rootDir+'Personal-Projects/">Personal Projects</a></div>';
     navBar.innerHTML += '<!-- navbar elements created by pageinit-initNavBar -->';
 }
 
@@ -83,7 +83,10 @@ pageFooter.innerHTML += '<div class="foot two columns"> © Clifford Robinson, 20
 pageFooter.innerHTML += '<!-- Footer created by pageinit-initFooter() -->';
 }
 
+function startEverything(){
 initFooter();
 initHeader(getNestLevel());
 initNavBar(getNestLevel());
+}
 
+document.addEventListener('DOMContentLoaded', startEverything);
