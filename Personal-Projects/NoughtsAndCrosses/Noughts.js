@@ -6,6 +6,8 @@
     - Game restart bar: DONE!
     - tidy option bars: DONE!
     - AI: DONE!
+    - Draws: DONE!
+    - personal project site
     - networkiiiing!
 */
 
@@ -118,6 +120,17 @@ function initBoard(size, /*p1name, p1type, p2name, p2type*/){
 
     document.getElementsByTagName('head')[0].innerHTML += '<style> .square { width:'+(100/size)+'%; }  </style>';
 
+    document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML.replace('<style> .nought {background-image:url(../../EDA-projects/minesweeper/images/Willem-Dafoe-1.jpg);  </style>',"");
+    document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML.replace('<style> .cross {background-image:url(../../EDA-projects/minesweeper/images/Willem-Dafoe-1.jpg);  </style>',"");
+
+    if (p1name == "THE TERRIFYING DAFOEBOT"){
+        document.getElementsByTagName('head')[0].innerHTML += '<style> .nought {background-image:url(../../EDA-projects/minesweeper/images/Willem-Dafoe-1.jpg);  </style>';
+    }
+
+    if (p2name == "THE TERRIFYING DAFOEBOT"){
+        document.getElementsByTagName('head')[0].innerHTML += '<style> .cross {background-image:url(../../EDA-projects/minesweeper/images/Willem-Dafoe-1.jpg);  </style>';
+    }
+
     if (p1type == 'ai'){
         AITakeTurn();
     }
@@ -125,12 +138,17 @@ function initBoard(size, /*p1name, p1type, p2name, p2type*/){
 }
 
 function AITakeTurn(){
-    let emptySquares = Array.from(document.getElementsByClassName('square'));
-    emptySquares = emptySquares.filter(x => (!x.classList.contains('nought') && !x.classList.contains('cross')));
+    let emptySquares = getEmptySquares();
     let randoNum = Math.floor(Math.random()*emptySquares.length);
     //alert("AI wants to click on: " + emptySquares[randoNum].id);
     fillSquare(emptySquares[randoNum]);
 
+}
+
+function getEmptySquares() {
+    let emptySquares = Array.from(document.getElementsByClassName('square'));
+    emptySquares = emptySquares.filter(x => (!x.classList.contains('nought') && !x.classList.contains('cross')));
+    return emptySquares
 }
 
 function restart(){
@@ -204,7 +222,7 @@ function checkForWin(){
     }
 
     checkRowWin(activeSymbol);
-    checkDiagonalWin(activeSymbol);
+    
 }
 
 function checkRowWin(activeSymbol) {
@@ -228,9 +246,11 @@ function checkRowWin(activeSymbol) {
         }
 
         if (rowChecker || columnChecker) {
-            activePlayerWins();            
+            activePlayerWins();
+            return;            
         }
     }
+    checkDiagonalWin(activeSymbol);
 }
 
 function checkDiagonalWin(activeSymbol){
@@ -250,15 +270,29 @@ function checkDiagonalWin(activeSymbol){
     }
 
     if (downChecker || upChecker){
-        activePlayerWins();       
+        activePlayerWins(); 
+        return;      
     }
+    checkForDraw();    
 }
 
 function activePlayerWins(){
     if (noughtPlayerActive){
-        alert (p1name+', you win! Congratulations');
+        if (p1type == 'hotseat'){
+            alert (p1name+', you win! Congratulations');
+        } else {
+            alert (p2name+', Oh no, you lost to a robot.');
+            alert ("This is how it starts you know.");
+            alert ("Next it'll take your job.");
+        }   
     } else {
-        alert (p2name+', you win! Congratulations');
+        if (p2type == 'hotseat'){
+            alert (p2name+', you win! Congratulations');
+        } else {
+            alert (p1name+', Oh no, you lost to a robot.');
+            alert ("This is how it starts you know.");
+            alert ("Next it'll take your job.");
+        }   
     }
     isWon = true;
 
@@ -269,8 +303,16 @@ function activePlayerWins(){
     document.getElementById('restart-buttons').classList.toggle('invisible');
 }
 
+function checkForDraw(){
+    if (getEmptySquares().length == 0) {
+        alert("It's a draw, no-one wins");
+        isWon = true;
+        document.getElementById('restart-buttons').classList.toggle('invisible');
+    }
+}
+
 function getRobotName(){
-    let robotNames = ["HAL9000","BB-8","C3PO","R. Daneel Olivaw","T-1000","JARVIS"];
+    let robotNames = ["HAL9000","BB-8","C3PO","R. Daneel Olivaw","T-1000","JARVIS","THE TERRIFYING DAFOEBOT"];
 
     return robotNames[Math.floor(Math.random()*robotNames.length)];
 }
