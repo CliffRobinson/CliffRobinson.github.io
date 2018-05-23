@@ -14,6 +14,6 @@ label {
     margin-right: 1em; 
 }
 
-#numbers-output {
+#numbers-output, #letters-output {
     height: 250px;
 }
